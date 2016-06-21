@@ -33,11 +33,11 @@ public class DateUtility {
 		return lastday;
 	}
 
-	String toString(int month, int day, int year, String delimiter) {
+	static String toString(int month, int day, int year, String delimiter) {
 		return delimiter;
 	} // prints the date as mm/dd/yyyy
 
-	public boolean isLeapYear(int year) {
+	public static boolean isLeapYear(int year) {
 		// returns t/f if the year is a leap year
 		// leap years are all years divisible by 4 but not 100
 		// years that are divisible by 400 are leap years, too
@@ -53,7 +53,7 @@ public class DateUtility {
 		return bLeapYear;
 
 	}
-	public int calcDaysBetween(int month, int year, int day , int month2, int year2, int day2){
+	public static int calcDaysBetween(int month, int year, int day , int month2, int year2, int day2){
 		int m=month-1;
 		int m2=month2-1;
 		int y=year;
@@ -73,7 +73,7 @@ public class DateUtility {
 		int daysBetween = (int) (numberOfDays-numberOfDays2);
 		return daysBetween;
 	}
-	public String dayOfWeek(int month, int year, int day){
+	public static String dayOfWeek(int month, int year, int day){
 		int y=year;
 		int m=month-1;
 		int d=day;
