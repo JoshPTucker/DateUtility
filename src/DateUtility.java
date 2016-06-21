@@ -54,8 +54,24 @@ public class DateUtility {
 
 	}
 	public int calcDaysBetween(int month, int year, int day , int month2, int year2, int day2){
+		int m=month-1;
+		int m2=month2-1;
+		int y=year;
+		int y2=year2;
+		int d=day;
+		int d2=day2;
+		GregorianCalendar gc = new GregorianCalendar(y, m, d);
 		
-		return 0;
+		GregorianCalendar gc2 = new GregorianCalendar(y2, m2, d2);
+		
+		long millisecondsPerDay = (24*60*60*1000);
+		long DateInMS = gc.getTimeInMillis();
+		long DateInMS2 = gc2.getTimeInMillis();
+		
+		float numberOfDays = DateInMS/millisecondsPerDay;
+		float numberOfDays2 = DateInMS2/millisecondsPerDay;
+		int daysBetween = (int) (numberOfDays-numberOfDays2);
+		return daysBetween;
 	}
 	public String dayOfWeek(int month, int year, int day){
 		int y=year;
